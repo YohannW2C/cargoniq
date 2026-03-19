@@ -298,23 +298,217 @@ footer{position:relative;overflow:hidden}
 .ft-ghost svg{width:clamp(320px,40vw,620px)}
 .ft,.ft-bar{position:relative;z-index:1}
 
-
+/* ══════════════════════════════════════
+   RESPONSIVE — TABLET ≤ 900px
+   ══════════════════════════════════════ */
 @media(max-width:900px){
   nav .nav-links{display:none}
+  .nav-r .nav-cta{display:none}
+  .nav-r .nav-ph,.nav-r .nav-fr{display:inline-flex}
   .nav-burger{display:flex!important}
-  .manif-cols,.qs,  .mf-r{border-left:none;border-top:1px solid var(--e2);padding-left:0;padding-top:28px}
+
+  .hero-split{flex-direction:column;align-items:flex-start;min-height:auto;padding-bottom:48px}
+  .hero-left{display:none}
+  .hero-in{flex:none;width:100%;border-left:none;border-top:none;padding:48px clamp(24px,5vw,56px) 0}
+
+  .hero-qicon{width:80px}
+  .hero-wordmark{width:clamp(240px,70vw,380px)}
+  .hero-h{font-size:clamp(36px,7vw,56px)}
+
+  .manif-cols,.qs,.mf-r{border-left:none;border-top:1px solid var(--e2);padding-left:0;padding-top:28px}
   .manif-cols{margin-top:32px}
-  
+  .qs{grid-template-columns:1fr;min-height:auto}
   .svcs-grid{grid-template-columns:1fr 1fr}
-  .photo-strip{grid-template-columns:1fr}
-  .photo-strip{height:auto}
+  .photo-strip{grid-template-columns:1fr;height:auto}
   .ps-cell{height:320px}
   .ps-cell:first-child::after{display:none}
   .metrics{grid-template-columns:1fr 1fr}
   .mt:nth-child(2)::after,.mt:nth-child(4)::after{display:none}
   .ft{grid-template-columns:1fr 1fr}
+  .final-sec{grid-template-columns:1fr}
+  .final-left{display:none}
+  .stab{display:none}
 }
 
+/* ══════════════════════════════════════
+   RESPONSIVE — MOBILE ≤ 640px
+   ══════════════════════════════════════ */
+@media(max-width:640px){
+
+  /* ── NAV ── */
+  nav{height:58px;padding:0 16px;gap:8px}
+  .nav-logo{width:160px}
+  .nav-ph{font-size:10px;letter-spacing:.02em}
+  .nav-r{gap:10px}
+  .nav-fr{
+    padding:5px 10px;
+    font-size:9px;
+    border:1px solid rgba(250,247,242,.3);
+    border-radius:2px;
+    min-height:32px;
+    line-height:1;
+    display:inline-flex;
+    align-items:center;
+  }
+  #scroll-rail{top:58px}
+
+  /* ── HERO ── */
+  .hero{padding-top:58px;min-height:100svh}
+  .hero-split{
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:flex-start;
+    min-height:calc(100svh - 58px);
+    padding-bottom:200px;
+  }
+  .hero-left{display:none}
+  .hero-in{
+    flex:none;width:100%;
+    border-left:none;border-top:none;
+    padding:0 20px;
+  }
+  .hero-qicon{display:none}
+  .hero-wordmark{
+    display:block;
+    width:min(82vw,280px);
+    margin-bottom:12px;
+    opacity:1!important;transform:none!important;animation:none!important;
+  }
+  .hero-chip{display:none}
+  .hero-h{
+    font-size:clamp(30px,8vw,44px);
+    line-height:.96;
+    margin-top:0;
+    margin-bottom:0;
+    opacity:1!important;transform:none!important;animation:none!important;
+  }
+  .hero-ctas{
+    flex-direction:row;flex-wrap:wrap;
+    gap:10px;margin-top:20px;
+    opacity:1!important;animation:none!important;
+  }
+  .h-cta-p{padding:14px 22px;font-size:9px;letter-spacing:.2em}
+  .h-cta-s{display:none}
+
+  /* ── HERO TAGBLOCK ── */
+  .hero-tagblock{padding:20px 20px 28px}
+  .hero-tagblock-inner{max-width:100%}
+  .hero-tb-tagline{
+    font-size:clamp(16px,5vw,22px);
+    line-height:1.2;margin-bottom:8px;
+    opacity:1!important;animation:none!important;
+  }
+  .hero-tb-body{
+    font-size:12px;line-height:1.7;
+    opacity:1!important;animation:none!important;
+  }
+  .hero-precision-shadow{display:none}
+
+  /* ── METRICS ── */
+  .metrics{grid-template-columns:1fr 1fr}
+  .mt{padding:24px 14px}
+  .mt-v{font-size:clamp(36px,9vw,52px)}
+  .mt-n{font-size:9px}
+  .mt:nth-child(2)::after,.mt:nth-child(4)::after{display:none}
+
+  /* ── SERVICES ── */
+  .svcs-grid{grid-template-columns:1fr}
+  .svc{padding:24px 20px}
+
+  /* ── MANIFESTO / QS ── */
+  .manif-wrap{padding:40px 20px}
+  .qs{grid-template-columns:1fr;min-height:auto}
+  .qv{min-height:280px}
+
+  /* ── PHOTO STRIP ── */
+  .photo-strip{grid-template-columns:1fr;height:auto}
+  .ps-cell{height:240px}
+
+  /* ── CONTACT FORM ── */
+  .mf-wrap{padding:40px 20px 36px}
+  .mf-grid{grid-template-columns:1fr}
+  .mf-l,.mf-r{padding:0}
+  .mf-r{padding-top:28px}
+  .mf-form{grid-template-columns:1fr}
+  .mf-ff-wide{grid-column:span 1}
+  .mf-form-row{display:flex;flex-direction:column;gap:0}
+  .final-fh{font-size:clamp(26px,7vw,38px);margin-bottom:12px}
+
+  /* ── FINAL SECTION — show contact info on mobile ── */
+  .final-sec{grid-template-columns:1fr}
+  .final-left{
+    display:block;
+    padding:36px 20px 0;
+    border-right:none;
+    border-bottom:1px solid rgba(196,98,58,.15);
+    padding-bottom:32px;
+  }
+  .mf-band-q{
+    font-size:clamp(18px,5.5vw,26px);
+    line-height:1.3;
+    margin-bottom:24px;
+  }
+  .final-right{padding:32px 20px 48px}
+  .final-contacts{flex-direction:column!important;gap:16px}
+  .wake-slogan{font-size:8px}
+
+  /* ── FOOTER ── */
+  .ft{grid-template-columns:1fr;gap:28px;padding:36px 20px}
+  .ft-bar{
+    flex-direction:column;gap:6px;
+    text-align:center;padding:14px 20px;
+    font-size:10px;
+  }
+  .ft-ghost{display:none}
+
+  /* ── SCROLL RAIL ── */
+  #scroll-rail{width:4px}
+  #scroll-thumb{width:5px;height:5px;left:0}
+
+  /* ── STAB ── */
+  .stab{display:none}
+
+  /* ── TOUCH TARGETS ── */
+  .nav-burger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+  .nav-fr{min-height:36px}
+  .h-cta-p{min-height:48px}
+  button,a{-webkit-tap-highlight-color:transparent}
+}
+
+/* ══════════════════════════════════════
+   MOBILE MENU OVERLAY
+   ══════════════════════════════════════ */
+#mobile-menu{
+  display:none;
+  position:fixed;inset:0;z-index:399;
+  background:#12121E;
+  flex-direction:column;
+  justify-content:center;align-items:flex-start;
+  padding:48px 32px;
+  gap:0;
+}
+#mobile-menu.open{display:flex}
+.mob-lk{
+  font-family:'Outfit',sans-serif;font-weight:900;
+  font-size:clamp(28px,7vw,44px);
+  color:rgba(250,247,242,.82);
+  letter-spacing:-.02em;
+  cursor:pointer;
+  padding:10px 0;
+  border-bottom:1px solid rgba(196,98,58,.1);
+  width:100%;
+  transition:color .2s;
+}
+.mob-lk:last-child{border-bottom:none}
+.mob-lk:hover{color:#FAF7F2}
+.mob-actions{
+  margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;
+}
+.mob-close{
+  position:absolute;top:18px;right:20px;
+  background:none;border:none;cursor:pointer;
+  padding:8px;
+}
 
 
 
@@ -572,6 +766,8 @@ footer{position:relative;overflow:hidden}
 
 
 
+
+
 </style>
 <!-- ── Structured Data — LocalBusiness + FreightForwardingService ── -->
 <script type="application/ld+json">
@@ -671,6 +867,41 @@ footer{position:relative;overflow:hidden}
 
 </nav>
 
+<!-- MOBILE MENU OVERLAY -->
+<div id="mobile-menu" role="dialog" aria-label="Menu">
+  <button class="mob-close" onclick="closeMobileMenu()" aria-label="Fermer">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BD9E78" stroke-width="1.2" stroke-linecap="round">
+      <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+    </svg>
+  </button>
+  <span class="mob-lk" onclick="closeMobileMenu();cqScroll('services')" data-en="Services" data-fr="Services">Services</span>
+  <span class="mob-lk" onclick="closeMobileMenu();cqScroll('technology')" data-en="Technology" data-fr="Technologie">Technology</span>
+  <span class="mob-lk" onclick="closeMobileMenu();cqScroll('about')" data-en="About" data-fr="À propos">About</span>
+  <span class="mob-lk" onclick="closeMobileMenu();cqScroll('contact')" data-en="Contact" data-fr="Contact">Contact</span>
+  <div class="mob-actions">
+    <button class="nav-cta" onclick="closeMobileMenu();cqScroll('contact')" style="pointer-events:all"><span data-en="Get a Quote" data-fr="Obtenir un devis">Get a Quote</span></button>
+    <button class="nav-fr" onclick="toggleLang()" id="btn-lang-mob">FR</button>
+  </div>
+
+  <!-- ADRESSE + LOGO -->
+  <div style="margin-top:auto;border-top:1px solid rgba(196,98,58,.18);padding-top:24px;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:16px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <a href="tel:+14388843110" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:400;letter-spacing:.06em;color:#FAF7F2;text-decoration:none">438.884.3110</a>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:rgba(250,247,242,.42);line-height:1.7">
+        1919 Lionel-Bertrand, Suite 104<br>
+        Boisbriand, Québec · J7H 1N8<br>
+        www.cargoniq.ca
+      </span>
+    </div>
+    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:52px;height:52px;flex-shrink:0;opacity:.55">
+      <path d="M 148,57.6 V 14.4 Q 148,7.2 140.8,7.2 H 19.2 Q 12,7.2 12,14.4 V 145.6 Q 12,152.8 19.2,152.8 H 140.8 Q 148,152.8 148,145.6 V 102.4" fill="none" stroke="#FAF7F2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="80" y1="80" x2="130.4" y2="130.4" stroke="#FAF7F2" stroke-width="7.2" stroke-linecap="round"/>
+      <line x1="76.8" y1="76.8" x2="28.8" y2="28.8" stroke="#FAF7F2" stroke-width="2" stroke-linecap="round"/>
+      <line x1="74.4" y1="79.2" x2="22.4" y2="41.6" stroke="#FAF7F2" stroke-width="1" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="hero">
 
@@ -743,7 +974,7 @@ footer{position:relative;overflow:hidden}
     </svg>
 
 
-    <h1 class="hero-h"><span data-en="Precision logistics for " data-fr="Logistique de précision pour le ">Precision logistics for </span><em><span data-en="global trade." data-fr="commerce mondial.">global trade.</span></em></h1>
+    <h1 class="hero-h"><span data-en="Precision logistics for " data-fr="Logistique de précision pour le ">Precision logistics for </span><em style="white-space:nowrap"><span data-en="global trade." data-fr="commerce mondial.">global trade.</span></em></h1>
 
 
     <div class="hero-ctas">
@@ -865,9 +1096,9 @@ footer{position:relative;overflow:hidden}
       <div style="flex:5;display:flex;flex-direction:column;gap:8px">
         <span class="mf-band-ey final-ey" style="margin-bottom:4px" data-en="GET IN TOUCH" data-fr="CONTACTEZ-NOUS">GET IN TOUCH</span>
         <span style="font-size:clamp(22px,2.2vw,32px);font-weight:900;font-family:var(--sans);letter-spacing:-.03em;line-height:1.18;margin-bottom:16px;color:var(--iv)" data-hen='Let&apos;s move your <span style="color:var(--cu)">cargo</span>' data-hfr='Transportons votre <span style="color:var(--cu)">cargaison</span>'>Let's move your <span style="color:var(--cu)">cargo</span></span>
-        <span><a href="tel:+14388843110">438.884.3110</a></span>
         <span>1919 Lionel-Bertrand, S-104</span>
         <span class="final-addr">Boisbriand, Québec · J7H 1N8</span>
+        <span><a href="tel:+14388843110">438.884.3110</a> &nbsp;·&nbsp; <a href="mailto:info@cargoniq.ca" style="color:inherit;text-decoration:none">info@cargoniq.ca</a></span>
       </div>
 
     </div>
@@ -927,11 +1158,24 @@ footer{position:relative;overflow:hidden}
   window.cqScroll = function(id){ scrollTo(document.getElementById(id)); };
 
   /* ── LANGUAGE TOGGLE ── */
+  /* ── MOBILE MENU ── */
+  window.toggleMobileMenu = function(){
+    var menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  };
+  window.closeMobileMenu = function(){
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
   var lang = 'en';
   window.toggleLang = function(){
     lang = lang === 'en' ? 'fr' : 'en';
     var btn = document.getElementById('btn-lang');
-    btn.textContent = lang === 'en' ? 'FR' : 'EN';
+    var btnMob = document.getElementById('btn-lang-mob');
+    if(btn) btn.textContent = lang === 'en' ? 'FR' : 'EN';
+    if(btnMob) btnMob.textContent = lang === 'en' ? 'FR' : 'EN';
     document.title = lang === 'en' ? 'CARGONIQ — The Wake of Precision' : 'CARGONIQ — Le Sillage de la Précision';
     document.documentElement.setAttribute('lang', lang);
     document.querySelectorAll('[data-en]').forEach(function(el){
